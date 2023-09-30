@@ -1,0 +1,4 @@
+Fuji - Verifier.sol: 0x3A7E3800B558Fb8E70147A7cE25EAaF1ce282A39
+
+Sepolia - ProofSender.sol: 0x686d5e23b01260f0708ebe65ce0a81dfed44f010
+Fuji - Proof Receiver: 0x425292CA710f1bc0DF6d778803f734450e6BC09a
