@@ -1,20 +1,17 @@
 const ethers = require("ethers")
-//const abi = require("./abi.json")
-const abi_goerli = require("./abi1.json")
-require("dotenv").config();
+const abi = require("./abi.json")
+require("dotenv").config()
 
 const priv_key = process.env.PRIVATE_KEY
 const api_key = process.env.API_KEY
 
-provider = new ethers.InfuraProvider("goerli", api_key)
+provider = new ethers.InfuraProvider("sepolia", api_key)
 const wallet = new ethers.Wallet(priv_key, provider)
-console.log(wallet)
 
 //0x686d5e23b01260f0708ebe65ce0a81dfed44f010 - sepolia
-const sepolia_sender_contract = new ethers.Contract("0x76710B40082B5DF9c924fB11B0D2d5cBf70760e8", abi_goerli, wallet)
+const sepolia_sender_contract = new ethers.Contract("0x686d5e23b01260f0708ebe65ce0a81dfed44f010", abi, wallet)
 
 async function main() {
-    console.log(wallet.address)
     const proof = {
         a: [
             "0x004eca896b8dbf2189265e3f439dcd9bafaeb51f09cd89914f1228b5b56b337a",
@@ -35,9 +32,8 @@ async function main() {
             "0x10d325481d32a952678b882379308eef80c80eef699232ff9de696c9870ad954"
           ]
     }
-    //const tx = await sepolia_sender_contract.sendMessagePayLINK(BigInt("14767482510784806043"), "0x425292CA710f1bc0DF6d778803f734450e6BC09a", proof);
-    const tx = await sepolia_sender_contract.sendMessage(proof, "0xf196DAF32fC4ebEf3605eB467dD7084822240C72") //Sending the tx on Goerli
 
+    const tx = await sepolia_sender_contract.sendMessagePayLINK(BigInt("14767482510784806043"), "0x425292CA710f1bc0DF6d778803f734450e6BC09a", proof);
     console.log(tx)
 }
 
