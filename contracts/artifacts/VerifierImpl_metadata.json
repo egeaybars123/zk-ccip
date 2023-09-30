@@ -105,11 +105,11 @@
 	},
 	"sources": {
 		"contracts/VerifierImplementation.sol": {
-			"keccak256": "0xe03901398dbc1c068439a590d201880662944c8b9ed482875ce1c0b491f690a7",
+			"keccak256": "0x80c4a94706174007b25433394248190bd7ed4b203d4c8bd4c12e7d85adadc058",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://fabfdcee875477a502c2566789f783bc63c206b0b9f632cfe5ec9c62d16a94aa",
-				"dweb:/ipfs/QmSTYdBc6wS2usCUuRUrS6bSKZfTRkPXh1SWo21MovstSd"
+				"bzz-raw://916e470e912af460e9f50ea7928adbb58b7e1ee724be48ea4035b722cbca742d",
+				"dweb:/ipfs/QmTwqgkG27LStUPDrQaohm9efM949pzxrp9Dcd4wdcYWtr"
 			]
 		}
 	},

@@ -2,6 +2,29 @@
 
 pragma solidity 0.8.18;
 
+//VerifierImplementation.sol
+
+interface IVerification {
+    struct Proof {
+        Pairing.G1Point a;
+        Pairing.G2Point b;
+        Pairing.G1Point c;
+    }
+    function verifyTx(Proof memory, uint[1] memory) external returns(bool);
+}
+
+contract VerifierImpl {
+
+    address constant verifierAddr = 0x5a8b4377fa297EA54585a34423A8C07FCC24Fb21; //Sepolia
+
+    function verifyProof(IVerification.Proof memory proof, uint[1] memory input) external {
+        bool result = IVerification(verifierAddr).verifyTx(proof, input);
+        require(result, "proof not true");
+    }
+}
+
+//Pairing library
+
 library Pairing {
     struct G1Point {
         uint X;
@@ -137,24 +160,5 @@ library Pairing {
         p2[2] = c2;
         p2[3] = d2;
         return pairing(p1, p2);
-    }
-}
-
-interface IVerification {
-    struct Proof {
-        Pairing.G1Point a;
-        Pairing.G2Point b;
-        Pairing.G1Point c;
-    }
-    function verifyTx(Proof memory, uint[1] memory) external returns(bool);
-}
-
-contract VerifierImpl {
-
-    address constant verifierAddr = 0x5a8b4377fa297EA54585a34423A8C07FCC24Fb21; //Sepolia
-
-    function verifyProof(IVerification.Proof memory proof, uint[1] memory input) external {
-        bool result = IVerification(verifierAddr).verifyTx(proof, input);
-        require(result, "proof not true");
     }
 }
