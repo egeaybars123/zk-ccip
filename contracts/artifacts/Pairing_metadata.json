@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ProofReceiver.sol": "Pairing"
+			"contracts/ProofSenderSepolia.sol": "Pairing"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -120,12 +120,12 @@
 				"dweb:/ipfs/QmV2W4NYpe6uk4s34sCyrFJHfPEjYAkvHUposWkXrRNtbj"
 			]
 		},
-		"contracts/ProofReceiver.sol": {
-			"keccak256": "0x3cd0cfe435774104d04887e7140d9fa57f6d18245d9b8ad96ef903a13cfe592b",
+		"contracts/ProofSenderSepolia.sol": {
+			"keccak256": "0x4b266befaa79085f368cac8c290bb5cec5b890fdfc71f3a2efffd00491ff9d5c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://173d491ba197acfee6d453f1264c13ed3de54c327d4bd1b6f261b559b35deb22",
-				"dweb:/ipfs/QmQgUCUu9e48YkdnCuEgvYj4QWJtk3GVGu3vHR5zHA4u2T"
+				"bzz-raw://6972ee4bd7f2eec10cbedf0f89754c49d56c121238024d975ffd3af72380c4ee",
+				"dweb:/ipfs/QmS7i6n2tRbC6jUjqUhpqH3jynTEy8KKtJy1PpAX4yAABm"
 			]
 		}
 	},

@@ -48,80 +48,6 @@
 				"inputs": [
 					{
 						"indexed": true,
-						"internalType": "bytes32",
-						"name": "messageId",
-						"type": "bytes32"
-					},
-					{
-						"indexed": true,
-						"internalType": "uint64",
-						"name": "sourceChainSelector",
-						"type": "uint64"
-					},
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "sender",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "text",
-						"type": "string"
-					}
-				],
-				"name": "MessageReceived",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "bytes32",
-						"name": "messageId",
-						"type": "bytes32"
-					},
-					{
-						"indexed": true,
-						"internalType": "uint64",
-						"name": "destinationChainSelector",
-						"type": "uint64"
-					},
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "receiver",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "text",
-						"type": "string"
-					},
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "feeToken",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "fees",
-						"type": "uint256"
-					}
-				],
-				"name": "MessageSent",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
 						"internalType": "address",
 						"name": "from",
 						"type": "address"
@@ -263,62 +189,9 @@
 						"type": "bytes32"
 					},
 					{
-						"components": [
-							{
-								"components": [
-									{
-										"internalType": "uint256",
-										"name": "X",
-										"type": "uint256"
-									},
-									{
-										"internalType": "uint256",
-										"name": "Y",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct Pairing.G1Point",
-								"name": "a",
-								"type": "tuple"
-							},
-							{
-								"components": [
-									{
-										"internalType": "uint256[2]",
-										"name": "X",
-										"type": "uint256[2]"
-									},
-									{
-										"internalType": "uint256[2]",
-										"name": "Y",
-										"type": "uint256[2]"
-									}
-								],
-								"internalType": "struct Pairing.G2Point",
-								"name": "b",
-								"type": "tuple"
-							},
-							{
-								"components": [
-									{
-										"internalType": "uint256",
-										"name": "X",
-										"type": "uint256"
-									},
-									{
-										"internalType": "uint256",
-										"name": "Y",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct Pairing.G1Point",
-								"name": "c",
-								"type": "tuple"
-							}
-						],
-						"internalType": "struct IVerification.Proof",
-						"name": "",
-						"type": "tuple"
+						"internalType": "bool",
+						"name": "result",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -332,6 +205,19 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastReceivedResult",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -367,57 +253,69 @@
 							{
 								"components": [
 									{
-										"internalType": "uint256",
-										"name": "X",
-										"type": "uint256"
+										"components": [
+											{
+												"internalType": "uint256",
+												"name": "X",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "Y",
+												"type": "uint256"
+											}
+										],
+										"internalType": "struct Pairing.G1Point",
+										"name": "a",
+										"type": "tuple"
 									},
 									{
-										"internalType": "uint256",
-										"name": "Y",
-										"type": "uint256"
+										"components": [
+											{
+												"internalType": "uint256[2]",
+												"name": "X",
+												"type": "uint256[2]"
+											},
+											{
+												"internalType": "uint256[2]",
+												"name": "Y",
+												"type": "uint256[2]"
+											}
+										],
+										"internalType": "struct Pairing.G2Point",
+										"name": "b",
+										"type": "tuple"
+									},
+									{
+										"components": [
+											{
+												"internalType": "uint256",
+												"name": "X",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "Y",
+												"type": "uint256"
+											}
+										],
+										"internalType": "struct Pairing.G1Point",
+										"name": "c",
+										"type": "tuple"
 									}
 								],
-								"internalType": "struct Pairing.G1Point",
-								"name": "a",
+								"internalType": "struct Messenger.Proof",
+								"name": "proof",
 								"type": "tuple"
 							},
 							{
-								"components": [
-									{
-										"internalType": "uint256[2]",
-										"name": "X",
-										"type": "uint256[2]"
-									},
-									{
-										"internalType": "uint256[2]",
-										"name": "Y",
-										"type": "uint256[2]"
-									}
-								],
-								"internalType": "struct Pairing.G2Point",
-								"name": "b",
-								"type": "tuple"
-							},
-							{
-								"components": [
-									{
-										"internalType": "uint256",
-										"name": "X",
-										"type": "uint256"
-									},
-									{
-										"internalType": "uint256",
-										"name": "Y",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct Pairing.G1Point",
-								"name": "c",
-								"type": "tuple"
+								"internalType": "uint256[1]",
+								"name": "input",
+								"type": "uint256[1]"
 							}
 						],
-						"internalType": "struct IVerification.Proof",
-						"name": "_proof",
+						"internalType": "struct Messenger.ZKMessage",
+						"name": "_data",
 						"type": "tuple"
 					}
 				],
@@ -449,57 +347,69 @@
 							{
 								"components": [
 									{
-										"internalType": "uint256",
-										"name": "X",
-										"type": "uint256"
+										"components": [
+											{
+												"internalType": "uint256",
+												"name": "X",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "Y",
+												"type": "uint256"
+											}
+										],
+										"internalType": "struct Pairing.G1Point",
+										"name": "a",
+										"type": "tuple"
 									},
 									{
-										"internalType": "uint256",
-										"name": "Y",
-										"type": "uint256"
+										"components": [
+											{
+												"internalType": "uint256[2]",
+												"name": "X",
+												"type": "uint256[2]"
+											},
+											{
+												"internalType": "uint256[2]",
+												"name": "Y",
+												"type": "uint256[2]"
+											}
+										],
+										"internalType": "struct Pairing.G2Point",
+										"name": "b",
+										"type": "tuple"
+									},
+									{
+										"components": [
+											{
+												"internalType": "uint256",
+												"name": "X",
+												"type": "uint256"
+											},
+											{
+												"internalType": "uint256",
+												"name": "Y",
+												"type": "uint256"
+											}
+										],
+										"internalType": "struct Pairing.G1Point",
+										"name": "c",
+										"type": "tuple"
 									}
 								],
-								"internalType": "struct Pairing.G1Point",
-								"name": "a",
+								"internalType": "struct Messenger.Proof",
+								"name": "proof",
 								"type": "tuple"
 							},
 							{
-								"components": [
-									{
-										"internalType": "uint256[2]",
-										"name": "X",
-										"type": "uint256[2]"
-									},
-									{
-										"internalType": "uint256[2]",
-										"name": "Y",
-										"type": "uint256[2]"
-									}
-								],
-								"internalType": "struct Pairing.G2Point",
-								"name": "b",
-								"type": "tuple"
-							},
-							{
-								"components": [
-									{
-										"internalType": "uint256",
-										"name": "X",
-										"type": "uint256"
-									},
-									{
-										"internalType": "uint256",
-										"name": "Y",
-										"type": "uint256"
-									}
-								],
-								"internalType": "struct Pairing.G1Point",
-								"name": "c",
-								"type": "tuple"
+								"internalType": "uint256[1]",
+								"name": "input",
+								"type": "uint256[1]"
 							}
 						],
-						"internalType": "struct IVerification.Proof",
-						"name": "_proof",
+						"internalType": "struct Messenger.ZKMessage",
+						"name": "_data",
 						"type": "tuple"
 					}
 				],
@@ -711,37 +621,9 @@
 						"_sourceChainSelector": "The selector of the source chain to be denylisted."
 					}
 				},
-				"getLastReceivedMessageDetails()": {
-					"returns": {
-						"_1": "text The last received text.",
-						"messageId": "The ID of the last received message."
-					}
-				},
 				"getRouter()": {
 					"returns": {
 						"_0": "i_router address"
-					}
-				},
-				"sendMessagePayLINK(uint64,address,((uint256,uint256),(uint256[2],uint256[2]),(uint256,uint256)))": {
-					"details": "Assumes your contract has sufficient LINK.",
-					"params": {
-						"_destinationChainSelector": "The identifier (aka selector) for the destination blockchain.",
-						"_proof": "The text to be sent.",
-						"_receiver": "The address of the recipient on the destination blockchain."
-					},
-					"returns": {
-						"messageId": "The ID of the CCIP message that was sent."
-					}
-				},
-				"sendMessagePayNative(uint64,address,((uint256,uint256),(uint256[2],uint256[2]),(uint256,uint256)))": {
-					"details": "Assumes your contract has sufficient native gas tokens.",
-					"params": {
-						"_destinationChainSelector": "The identifier (aka selector) for the destination blockchain.",
-						"_proof": "The text to be sent.",
-						"_receiver": "The address of the recipient on the destination blockchain."
-					},
-					"returns": {
-						"messageId": "The ID of the CCIP message that was sent."
 					}
 				},
 				"supportsInterface(bytes4)": {
@@ -807,20 +689,11 @@
 				"denylistSourceChain(uint64)": {
 					"notice": "This function can only be called by the owner."
 				},
-				"getLastReceivedMessageDetails()": {
-					"notice": "Fetches the details of the last received message."
-				},
 				"getRouter()": {
 					"notice": "Return the current router"
 				},
 				"owner()": {
 					"notice": "Get the current owner"
-				},
-				"sendMessagePayLINK(uint64,address,((uint256,uint256),(uint256[2],uint256[2]),(uint256,uint256)))": {
-					"notice": "Sends data to receiver on the destination chain.Pay for fees in LINK."
-				},
-				"sendMessagePayNative(uint64,address,((uint256,uint256),(uint256[2],uint256[2]),(uint256,uint256)))": {
-					"notice": "Sends data to receiver on the destination chain.Pay for fees in native gas."
 				},
 				"supportsInterface(bytes4)": {
 					"notice": "IERC165 supports an interfaceId"
@@ -849,7 +722,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ProofReceiver.sol": "Messenger"
+			"contracts/ProofSenderSepolia.sol": "Messenger"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -951,12 +824,12 @@
 				"dweb:/ipfs/QmV2W4NYpe6uk4s34sCyrFJHfPEjYAkvHUposWkXrRNtbj"
 			]
 		},
-		"contracts/ProofReceiver.sol": {
-			"keccak256": "0x3cd0cfe435774104d04887e7140d9fa57f6d18245d9b8ad96ef903a13cfe592b",
+		"contracts/ProofSenderSepolia.sol": {
+			"keccak256": "0x4b266befaa79085f368cac8c290bb5cec5b890fdfc71f3a2efffd00491ff9d5c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://173d491ba197acfee6d453f1264c13ed3de54c327d4bd1b6f261b559b35deb22",
-				"dweb:/ipfs/QmQgUCUu9e48YkdnCuEgvYj4QWJtk3GVGu3vHR5zHA4u2T"
+				"bzz-raw://6972ee4bd7f2eec10cbedf0f89754c49d56c121238024d975ffd3af72380c4ee",
+				"dweb:/ipfs/QmS7i6n2tRbC6jUjqUhpqH3jynTEy8KKtJy1PpAX4yAABm"
 			]
 		}
 	},

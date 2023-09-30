@@ -96,7 +96,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ProofReceiver.sol": "IVerification"
+			"contracts/ProofReceiverFuji.sol": "IVerification"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -198,12 +198,12 @@
 				"dweb:/ipfs/QmV2W4NYpe6uk4s34sCyrFJHfPEjYAkvHUposWkXrRNtbj"
 			]
 		},
-		"contracts/ProofReceiver.sol": {
-			"keccak256": "0x3cd0cfe435774104d04887e7140d9fa57f6d18245d9b8ad96ef903a13cfe592b",
+		"contracts/ProofReceiverFuji.sol": {
+			"keccak256": "0xd5e82b1fbe81a2d40be550220c7e024ea04aee88bee2f67ba1137b3bab30078b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://173d491ba197acfee6d453f1264c13ed3de54c327d4bd1b6f261b559b35deb22",
-				"dweb:/ipfs/QmQgUCUu9e48YkdnCuEgvYj4QWJtk3GVGu3vHR5zHA4u2T"
+				"bzz-raw://2baa71fb3ff6936c3be232299105a8ecd2ba00ee1f7ad05dcb44d0f1b23ef31e",
+				"dweb:/ipfs/QmYwVh5tKgDuXEE73tqmQW2mYz21icZXqwwDsot5n4y3j9"
 			]
 		}
 	},
